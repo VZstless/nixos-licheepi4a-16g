@@ -6,10 +6,10 @@
   ...
 }:
 
-buildLinux rec {
+buildLinux {
   pname = "linux-th1520";
   version = "7.0.1";
-  modDirVersion = version;
+  modDirVersion = "7.0.1";
 
   src = fetchFromGitHub {
     owner = "revyos";
@@ -35,3 +35,4 @@ buildLinux rec {
     platforms = [ "riscv64-linux" ];
   };
 }
+

@@ -84,9 +84,9 @@
         uboot = pkgsKernelCross.callPackage ./pkgs/u-boot { };
         sdImage = self.nixosConfigurations.lp4a-cross.config.system.build.sdImage;
 
-        # the nixpkgs
-        pkgsKernelCross = pkgsKernelCross;
-        pkgsKernelNative = pkgsKernelNative;
+        # nixpkgs instances exposed for external consumption.
+        # These are not derivations, so they are not listed in packages.
+        # Access them via builtins.getFlake or as flake inputs.
       };
 
       # use `nix develop .#fhsEnv` to enter the fhs test environment defined here.
