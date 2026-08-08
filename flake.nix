@@ -36,7 +36,7 @@
         thead-opensbi = final.callPackage ./pkgs/opensbi { };
 
         # bcachefs-tools fails to cross-compile for riscv64; not needed on this board.
-        bcachefs-tools = prev.runCommand "bcachefs-tools-stub" { } ''
+        bcachefs-tools = prev.runCommand "bcachefs-tools-stub" { meta.mainProgram = "bcachefs"; } ''
           mkdir -p $out/bin $out/sbin
         '';
       };
