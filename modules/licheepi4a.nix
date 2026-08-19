@@ -141,11 +141,14 @@
     # === dev ===
     # version control
     git
-    # languages
-    python3
-    # openjdk # not support riscv64 now
-    gcc
+    # why the original version wants a gcc in system-wide?
+
+    #=== network ===
+    bird2
+    wireguard-tools
   ];
+
+  networking.networkmanager.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh = {
